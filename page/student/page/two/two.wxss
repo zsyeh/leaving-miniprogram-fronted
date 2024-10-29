@@ -1,0 +1,33 @@
+/* leave_request.wxss */
+.container {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.input-field {
+  margin: 10rpx 0;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+}
+
+.date-picker {
+  margin: 10rpx 0;
+}
+
+.picker {
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-button {
+  background-color: #007aff;
+  color: white;
+  padding: 10rpx;
+  border-radius: 5rpx;
+  text-align: center;
+}

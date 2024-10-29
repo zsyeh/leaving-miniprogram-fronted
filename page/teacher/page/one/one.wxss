@@ -1,0 +1,79 @@
+/* 整体布局 */
+.container {
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+/* 单个假条容器样式 */
+.leave-item {
+  background-color: #ffffff;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 假条头部，姓名和班级 */
+.leave-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.leave-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.leave-class {
+  font-size: 16px;
+  color: #666;
+  margin-left: 8px;
+}
+
+/* 假条内容 */
+.leave-content {
+  margin-top: 8px;
+}
+
+.leave-dates, .leave-reason {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.date-label, .reason-label {
+  font-weight: bold;
+  color: #333;
+  width: 80px;
+}
+
+.date-value, .reason-value {
+  color: #666;
+}
+
+/* 批准按钮样式 */
+.approve-button {
+  background-color: #07c160; /* 微信绿色 */
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.approve-button:active {
+  background-color: #06a454;
+}
+
+/* 已批准的文本样式 */
+.approved-text {
+  font-size: 16px;
+  color: #07c160;
+  text-align: right;
+  margin-top: 12px;
+}

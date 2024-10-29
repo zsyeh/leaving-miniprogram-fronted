@@ -1,0 +1,30 @@
+<view class="container">
+    <scroll-view scroll-y="true" style="height: 100vh;">
+        <view wx:for="{{leaveRequests}}" wx:key="id" class="leave-item">
+            <view class="leave-header">
+                <text class="leave-name">{{item.name}}</text>
+                <text class="leave-class">（{{item.class_name}}）</text>
+            </view>
+            <view class="leave-content">
+                <view class="leave-dates">
+                    <text class="date-label">开始时间:</text>
+                    <text class="date-value">{{item.start_date}}</text>
+                </view>
+                <view class="leave-dates">
+                    <text class="date-label">结束时间:</text>
+                    <text class="date-value">{{item.end_date}}</text>
+                </view>
+                <view class="leave-reason">
+                    <text class="reason-label">理由:</text>
+                    <text class="reason-value">{{item.reason}}</text>
+                </view>
+            </view>
+            <view class="leave-status" wx:if="{{item.is_approved}}">
+                <text class="approved">已批准</text>
+            </view>
+            <view class="leave-status" wx:if="{{!item.is_approved}}">
+                <text class="not-approved">未批准</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
