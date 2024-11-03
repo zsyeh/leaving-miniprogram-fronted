@@ -19,8 +19,13 @@
                     <text class="reason-value">{{item.reason}}</text>
                 </view>
             </view>
-            <button wx:if="{{!item.is_approved}}" bindtap="approveLeave" data-id="{{item.id}}" class="approve-button">批准</button>
-            <text wx:if="{{item.is_approved}}" class="approved-text">已批准</text>
+            <view class="button-container">
+              <button wx:if="{{item.status==0}}" bindtap="approveLeave" data-id="{{item.id}}" class="approve-button">批准</button>
+              <button wx:if="{{item.status==0}}" bindtap="rejectLeave" data-id="{{item.id}}" class="reject-button">拒绝</button>
+            </view>
+            <text wx:if="{{item.status==3}}" class="canceled-text">已销假</text>
+            <text wx:if="{{item.status==2}}" class="rejected-text">已拒绝</text>
+            <text wx:if="{{item.status==1}}" class="approved-text">已批准</text>
         </view>
     </scroll-view>
 </view>

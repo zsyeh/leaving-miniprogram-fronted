@@ -19,11 +19,18 @@
                     <text class="reason-value">{{item.reason}}</text>
                 </view>
             </view>
-            <view class="leave-status" wx:if="{{item.is_approved}}">
+            <view class="leave-status" wx:if="{{item.status==1}}">
                 <text class="approved">已批准</text>
+                <button bindtap="completeLeave" data-id="{{item.id}}" class=" complete-button">销假</button>
             </view>
-            <view class="leave-status" wx:if="{{!item.is_approved}}">
+            <view class="leave-status" wx:if="{{item.status==0}}">
                 <text class="not-approved">未批准</text>
+            </view>
+            <view class="leave-status" wx:if="{{item.status==2}}">
+                <text class="not-approved">被拒绝</text>
+            </view>
+            <view class="leave-status" wx:if="{{item.status==3}}">
+                <text class="completed">已销假</text>
             </view>
         </view>
     </scroll-view>

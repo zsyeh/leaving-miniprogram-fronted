@@ -66,6 +66,18 @@
   width: 100%;
 }
 
+.reject-button {
+  background-color: #f50a0a; /* 微信绿色 */
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+  margin-top: 12px;
+  width: 100%;
+}
+
 .approve-button:active {
   background-color: #06a454;
 }
@@ -74,6 +86,20 @@
 .approved-text {
   font-size: 16px;
   color: #07c160;
+  text-align: right;
+  margin-top: 12px;
+}
+
+.rejected-text {
+  font-size: 16px;
+  color: #c10707;
+  text-align: right;
+  margin-top: 12px;
+}
+
+.canceled-text {
+  font-size: 16px;
+  color: #6f78f1;
   text-align: right;
   margin-top: 12px;
 }
