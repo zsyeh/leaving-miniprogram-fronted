@@ -1,41 +1,65 @@
+<!-- leave_request.wxml -->
 <view class="container">
-    <input class="input-field" placeholder="姓名" data-field="name" bindinput="handleInputChange" />
-    <input class="input-field" placeholder="班级" data-field="className" bindinput="handleInputChange" />
+    <!-- 标题 -->
+    <view class="title">
+        <text>请假申请</text>
+    </view>
+
 
     <!-- 开始日期选择器 -->
     <view class="date-picker">
-        <text>开始日期和时间:</text>
-        <picker mode="date" bindchange="chooseStartDate">
-            <view class="picker">
-                {{startDate || '请选择日期'}}
-            </view>
-        </picker>
-        <picker mode="time" bindchange="chooseStartTime">
-            <view class="picker">
-                {{startTime || '请选择时间'}}
-            </view>
-        </picker>
+        <view class="picker-label">
+            <icon type="calendar" size="24" color="#007aff"></icon>
+            <text>开始日期和时间:</text>
+        </view>
+        <view class="picker-container">
+            <picker mode="date" bindchange="chooseStartDate">
+                <view class="picker">
+                    {{startDate || '请选择日期'}}
+                </view>
+            </picker>
+            <picker mode="time" bindchange="chooseStartTime">
+                <view class="picker">
+                    {{startTime || '请选择时间'}}
+                </view>
+            </picker>
+        </view>
     </view>
 
     <!-- 结束日期选择器 -->
     <view class="date-picker">
-        <text>结束日期和时间:</text>
-        <picker mode="date" bindchange="chooseEndDate">
-            <view class="picker">
-                {{endDate || '请选择日期'}}
-            </view>
-        </picker>
-        <picker mode="time" bindchange="chooseEndTime">
-            <view class="picker">
-                {{endTime || '请选择时间'}}
-            </view>
-        </picker>
+        <view class="picker-label">
+            <icon type="calendar" size="24" color="#007aff"></icon>
+            <text>结束日期和时间:</text>
+        </view>
+        <view class="picker-container">
+            <picker mode="date" bindchange="chooseEndDate">
+                <view class="picker">
+                    {{endDate || '请选择日期'}}
+                </view>
+            </picker>
+            <picker mode="time" bindchange="chooseEndTime">
+                <view class="picker">
+                    {{endTime || '请选择时间'}}
+                </view>
+            </picker>
+        </view>
     </view>
 
-    <input class="input-field" placeholder="请假理由" data-field="reason" bindinput="handleInputChange" />
+    <!-- 请假理由输入框 -->
+    <view class="input-group">
+        <icon type="edit" size="24" color="#007aff"></icon>
+        <input class="input-field" placeholder="请输入请假理由" data-field="reason" bindinput="handleInputChange" />
+    </view>
 
+    <!-- 提交按钮 -->
     <button class="submit-button" bindtap="submitLeaveRequest">提交请假申请</button>
-    <button class="submit-button" bindtap="navigateToMyLeaves">查询我的假条</button>
 
-    
+    <!-- 查询按钮 -->
+    <button class="navigate-button" bindtap="navigateToMyLeaves">查询我的假条</button>
+
+    <!-- 实时请假时长提示信息 -->
+    <view class="leave-status-message" style="color: {{leaveMessageColor}}; margin-top: 10rpx; font-size: 28rpx;">
+        {{leaveMessage}}
+    </view>
 </view>

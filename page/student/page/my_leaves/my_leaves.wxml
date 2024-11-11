@@ -20,18 +20,24 @@
                 </view>
             </view>
             <view class="leave-status" wx:if="{{item.status==1}}">
-                <text class="approved">已批准</text>
-                <button bindtap="completeLeave" data-id="{{item.id}}" class=" complete-button">销假</button>
+                <text class="approved">已批准,请及时销假 批准人：{{item.approver}}</text>    
             </view>
             <view class="leave-status" wx:if="{{item.status==0}}">
                 <text class="not-approved">未批准</text>
             </view>
             <view class="leave-status" wx:if="{{item.status==2}}">
-                <text class="not-approved">被拒绝</text>
+                <text class="not-approved">被拒绝,请咨询老师 {{item.approver}}</text>
             </view>
             <view class="leave-status" wx:if="{{item.status==3}}">
-                <text class="completed">已销假</text>
+                <text class="completed">已销假 销假老师{{item.approver}}</text>
             </view>
+            <view class="leave-status" wx:if="{{item.status==4}}">
+                <text class="not-approved">未批准,长时间请假需要审核</text>
+            </view>
+            <view class="leave-status" wx:if="{{item.status==-1}}">
+                <text class="completed">已取消</text>
+            </view>
+            
         </view>
     </scroll-view>
 </view>

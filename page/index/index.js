@@ -145,16 +145,16 @@ Page({
         'Authorization': 'Bearer ' + token // 使用获取到的 access token
       },
       success: function (res) {
-        const { is_superuser, name, student_id } = res.data;
+        const { is_superuser, name, student_id,user_group } = res.data;
 
         wx.setStorageSync('name', name);
         wx.setStorageSync('student_id', student_id);
 
         // 根据is_superuser字段判断权限并跳转
-        if (is_superuser) {
-          that.goTeacher();
-        } else {
+        if (user_group == 'stu') {
           that.goStudent();
+        } else {
+          that.goTeacher();
         }
       },
       fail: function () {

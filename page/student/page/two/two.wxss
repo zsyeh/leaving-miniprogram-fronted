@@ -1,33 +1,146 @@
 /* leave_request.wxss */
+
 .container {
   padding: 20rpx;
-  background-color: #fff;
+  background-color: #f5f5f5;
+  min-height: 100vh;
 }
 
-.input-field {
-  margin: 10rpx 0;
-  padding: 10rpx;
-  border: 1px solid #ccc;
-  border-radius: 5rpx;
+/* 标题样式 */
+.title {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
 }
 
+/* 日期选择器样式 */
 .date-picker {
-  margin: 10rpx 0;
+  background-color: #fff;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+}
+
+.picker-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.picker-label text {
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: #555;
+}
+
+.picker-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .picker {
-  padding: 10rpx;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 10rpx 15rpx;
+  border: 1rpx solid #ccc;
   border-radius: 5rpx;
+  background-color: #fafafa;
+  margin-right: 10rpx;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.picker:last-child {
+  margin-right: 0;
+}
+
+.picker:hover {
+  background-color: #e6f7ff;
+}
+
+/* 输入框组样式 */
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+}
+
+.input-group icon {
+  margin-right: 10rpx;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10rpx;
+  border: none;
+  outline: none;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 按钮样式 */
+.submit-button, .navigate-button {
+  width: 100%;
+  padding: 15rpx;
+  border: none;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  margin-bottom: 15rpx;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .submit-button {
   background-color: #007aff;
-  color: white;
-  padding: 10rpx;
-  border-radius: 5rpx;
+}
+
+.submit-button:hover {
+  background-color: #005bb5;
+  transform: scale(1.02);
+}
+
+.navigate-button {
+  background-color: #34c759;
+}
+
+.navigate-button:hover {
+  background-color: #28a745;
+  transform: scale(1.02);
+}
+
+/* 请假时长提示信息样式 */
+.leave-status-message {
   text-align: center;
+  font-weight: bold;
+}
+
+/* 响应式设计 */
+@media screen and (min-height: 800rpx) {
+  .container {
+      padding: 30rpx;
+  }
+
+  .title {
+      font-size: 36rpx;
+  }
+
+  .picker-label text, .input-group icon, .input-field, .picker {
+      font-size: 30rpx;
+  }
+
+  .submit-button, .navigate-button {
+      font-size: 32rpx;
+  }
+
+  .leave-status-message {
+      font-size: 30rpx;
+  }
 }
